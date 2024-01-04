@@ -15,9 +15,6 @@ Check logo and add to cart elements
 
 Login user
     [Arguments]  ${username}  ${password}
-    Open Browser  ${URL}  ${BROWSER}
-    Maximize Browser Window
-    Wait And Click Element    ${HOMEPAGE_SIGNIN_BTN}
     Wait And Input Text    ${LOGIN_USERNAME_FIELD}    ${username}
     Wait And Input Text    ${LOGIN_PASSWORD_FIELD}    ${password}
     Wait And Click Element    ${LOGIN_BTN}
@@ -66,13 +63,13 @@ Get to login page
 
 Wait And Click Element
     [Documentation]  wait for elements to be enabled before clicking
-    [Arguments]  ${selector}  ${timeoust}=10s
+    [Arguments]  ${selector}  ${timeout}=10s
     Wait Until Element Is Enabled    ${selector}
     Click Element  ${selector}
 
 Wait And Input Text
     [Documentation]  wait for elements to be enabled before inputting text
-    [Arguments]  ${selector}  ${text}  ${timeoust}=10s
+    [Arguments]  ${selector}  ${text}  ${timeout}=10s
     Wait Until Element Is Enabled    ${selector}
     Input Text  ${selector}  ${text}
 
@@ -131,5 +128,18 @@ Delete Address and close browser
     Close Browser
 
     
-
+Add to Cart
+    Wait And Input Text    ${SEARCH_FIELD}    T-Shirt
+    Wait And Click Element    ${SEARCH_SUBMIT}
+    Wait And Click Element    ${SELECT_CART_ITEM}
+    Wait And Click Element    ${ADD_TO_CART_BTN}
+    Sleep    10s
+    Wait And Click Element    ${PROCEED_CHECKOUT}
+    Wait And Click Element    ${PROCEED_CHECKOUT2}
+    Wait And Click Element    ${PROCEED_CHECKOUT3}
+    Wait And Click Element    ${TOS_CHECKBOX}
+    Wait And Click Element    ${PROCEED_CHECKOUT4}
+    Wait And Click Element    ${PAYMENT_CHECK_OPTION}
+    Wait And Click Element    ${CONFIRM_ORDER_BTN}
+    Page Should Contain   Your order on My Shop is complete.
 
