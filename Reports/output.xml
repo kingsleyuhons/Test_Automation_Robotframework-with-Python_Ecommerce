@@ -1,81 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20230221 12:13:53.261" rpa="false" schemaversion="3">
-<suite id="s1" name="Google Search" source="C:\Users\kingsley\PycharmProjects\robotframework_automation_practice\google_search.robot">
-<test id="s1-t1" name="User should be able to search through google" line="14">
-<kw name="Search google">
+<robot generator="Robot 6.0 (Python 3.10.7 on win32)" generated="20240104 16:14:53.573" rpa="false" schemaversion="3">
+<suite id="s1" name="User Add To Cart" source="C:\Users\kingsley\PycharmProjects\Test_Automation_Robotframework-with-Python_Ecommerce\Testcases\user_add_to_cart.robot">
+<kw name="Get to login page" library="MyKeywords" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230221 12:13:53.573" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<status status="PASS" starttime="20230221 12:13:53.573" endtime="20230221 12:14:02.890"/>
+<msg timestamp="20240104 16:14:54.467" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.pl/index.php'.</msg>
+<status status="PASS" starttime="20240104 16:14:54.467" endtime="20240104 16:15:10.262"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230221 12:14:02.890" endtime="20230221 12:14:03.026"/>
+<status status="PASS" starttime="20240104 16:15:10.262" endtime="20240104 16:15:10.423"/>
 </kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${HOMEPAGE_SIGNIN_BTN}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>xpath://*[@id="vc3jof"]/div/div</arg>
+<arg>${selector}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20230221 12:14:03.026" endtime="20230221 12:14:03.067"/>
+<status status="PASS" starttime="20240104 16:15:10.424" endtime="20240104 16:15:10.474"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://*[@id="vc3jof"]/div/div</arg>
+<arg>${selector}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230221 12:14:03.068" level="INFO">Clicking element 'xpath://*[@id="vc3jof"]/div/div'.</msg>
-<status status="PASS" starttime="20230221 12:14:03.067" endtime="20230221 12:14:03.511"/>
+<msg timestamp="20240104 16:15:10.475" level="INFO">Clicking element 'class:login'.</msg>
+<status status="PASS" starttime="20240104 16:15:10.474" endtime="20240104 16:15:12.080"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://*[@id="L2AGLb"]/div</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230221 12:14:03.513" level="INFO">Clicking element 'xpath://*[@id="L2AGLb"]/div'.</msg>
-<status status="PASS" starttime="20230221 12:14:03.512" endtime="20230221 12:14:03.594"/>
+<status status="PASS" starttime="20240104 16:15:10.423" endtime="20240104 16:15:12.080"/>
 </kw>
+<status status="PASS" starttime="20240104 16:14:54.467" endtime="20240104 16:15:12.080"/>
+</kw>
+<test id="s1-t1" name="User should be able to login" line="11">
+<kw name="Login user" library="MyKeywords">
+<arg>kingsleyuhons@gmail.com</arg>
+<arg>CathP7</arg>
+<kw name="Wait And Input Text" library="MyKeywords">
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>wait for elements to be enabled before inputting text</doc>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>${SEARCH_FIELD}</arg>
+<arg>${selector}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20230221 12:14:03.594" endtime="20230221 12:14:03.654"/>
+<status status="PASS" starttime="20240104 16:15:12.085" endtime="20240104 16:15:12.153"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${SEARCH_FIELD}</arg>
-<arg>${search_text}</arg>
+<arg>${selector}</arg>
+<arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230221 12:14:03.655" level="INFO">Typing text 'Selenium Library' into text field 'xpath://input[@name='q']'.</msg>
-<status status="PASS" starttime="20230221 12:14:03.654" endtime="20230221 12:14:03.818"/>
+<msg timestamp="20240104 16:15:12.155" level="INFO">Typing text 'kingsleyuhons@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20240104 16:15:12.154" endtime="20240104 16:15:12.455"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:12.085" endtime="20240104 16:15:12.456"/>
+</kw>
+<kw name="Wait And Input Text" library="MyKeywords">
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>wait for elements to be enabled before inputting text</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:12.457" endtime="20240104 16:15:12.564"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:12.566" level="INFO">Typing text 'CathP7' into text field 'name:passwd'.</msg>
+<status status="PASS" starttime="20240104 16:15:12.564" endtime="20240104 16:15:12.705"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:12.456" endtime="20240104 16:15:12.710"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${LOGIN_BTN}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:12.710" endtime="20240104 16:15:12.754"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${search_btn}</arg>
+<arg>${selector}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230221 12:14:03.819" level="INFO">Clicking element 'xpath://div[@class='FPdoLc lJ9FBc']//input[@name='btnK']'.</msg>
-<status status="PASS" starttime="20230221 12:14:03.818" endtime="20230221 12:14:06.698"/>
+<msg timestamp="20240104 16:15:12.755" level="INFO">Clicking element 'id:SubmitLogin'.</msg>
+<status status="PASS" starttime="20240104 16:15:12.754" endtime="20240104 16:15:13.744"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:12.710" endtime="20240104 16:15:13.745"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${search_result}</arg>
+<arg>${LOGGEDIN_USER}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230221 12:14:06.749" level="INFO">Current page contains text 'Selenium library'.</msg>
-<status status="PASS" starttime="20230221 12:14:06.698" endtime="20230221 12:14:06.750"/>
+<msg timestamp="20240104 16:15:13.784" level="INFO">Current page contains text 'Kingsley Uhons'.</msg>
+<status status="PASS" starttime="20240104 16:15:13.745" endtime="20240104 16:15:13.784"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230221 12:14:06.750" endtime="20230221 12:14:09.198"/>
+<status status="PASS" starttime="20240104 16:15:12.080" endtime="20240104 16:15:13.789"/>
 </kw>
-<status status="PASS" starttime="20230221 12:13:53.572" endtime="20230221 12:14:09.199"/>
-</kw>
-<tag>king</tag>
-<status status="PASS" starttime="20230221 12:13:53.571" endtime="20230221 12:14:09.199"/>
+<status status="PASS" starttime="20240104 16:15:12.080" endtime="20240104 16:15:13.789"/>
 </test>
-<doc>Search google</doc>
-<status status="PASS" starttime="20230221 12:13:53.264" endtime="20230221 12:14:09.201"/>
+<test id="s1-t2" name="User should be able to add item to cart successfully" line="13">
+<kw name="Add to Cart" library="MyKeywords">
+<kw name="Wait And Input Text" library="MyKeywords">
+<arg>${SEARCH_FIELD}</arg>
+<arg>T-Shirt</arg>
+<doc>wait for elements to be enabled before inputting text</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:13.789" endtime="20240104 16:15:13.829"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:13.834" level="INFO">Typing text 'T-Shirt' into text field 'xpath://input[@id='search_query_top']'.</msg>
+<status status="PASS" starttime="20240104 16:15:13.829" endtime="20240104 16:15:13.980"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:13.789" endtime="20240104 16:15:13.981"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${SEARCH_SUBMIT}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:13.982" endtime="20240104 16:15:14.049"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:14.050" level="INFO">Clicking element 'name:submit_search'.</msg>
+<status status="PASS" starttime="20240104 16:15:14.049" endtime="20240104 16:15:15.209"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:13.981" endtime="20240104 16:15:15.209"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${SELECT_CART_ITEM}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:15.211" endtime="20240104 16:15:15.266"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:15.267" level="INFO">Clicking element 'xpath://img[@alt='Faded Short Sleeve T-shirts']'.</msg>
+<status status="PASS" starttime="20240104 16:15:15.266" endtime="20240104 16:15:16.877"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:15.210" endtime="20240104 16:15:16.877"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:16.878" endtime="20240104 16:15:16.929"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:16.930" level="INFO">Clicking element 'xpath://span[.='Add to cart']'.</msg>
+<status status="PASS" starttime="20240104 16:15:16.930" endtime="20240104 16:15:16.995"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:16.877" endtime="20240104 16:15:16.996"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 16:15:27.001" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240104 16:15:16.996" endtime="20240104 16:15:27.001"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${PROCEED_CHECKOUT}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:27.001" endtime="20240104 16:15:27.079"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:27.079" level="INFO">Clicking element 'xpath://header/div[3]/div[1]/div[1]/div[4]/div[1]/div[2]/div[4]/a[1]/span[1]'.</msg>
+<status status="PASS" starttime="20240104 16:15:27.079" endtime="20240104 16:15:27.815"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:27.001" endtime="20240104 16:15:27.815"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${PROCEED_CHECKOUT2}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:27.817" endtime="20240104 16:15:27.875"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:27.879" level="INFO">Clicking element 'xpath://span[.='Proceed to checkout']'.</msg>
+<status status="PASS" starttime="20240104 16:15:27.878" endtime="20240104 16:15:28.722"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:27.816" endtime="20240104 16:15:28.723"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${PROCEED_CHECKOUT3}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:28.725" endtime="20240104 16:15:28.762"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:28.762" level="INFO">Clicking element 'xpath://span[.='Proceed to checkout']'.</msg>
+<status status="PASS" starttime="20240104 16:15:28.762" endtime="20240104 16:15:29.116"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:28.723" endtime="20240104 16:15:29.118"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${TOS_CHECKBOX}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:29.124" endtime="20240104 16:15:29.574"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:29.575" level="INFO">Clicking element 'id:cgv'.</msg>
+<status status="PASS" starttime="20240104 16:15:29.574" endtime="20240104 16:15:29.645"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:29.119" endtime="20240104 16:15:29.646"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${PROCEED_CHECKOUT4}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:29.647" endtime="20240104 16:15:29.682"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:29.687" level="INFO">Clicking element 'xpath://button[@name='processCarrier']/span[contains(.,'Proceed to checkout')]'.</msg>
+<status status="PASS" starttime="20240104 16:15:29.687" endtime="20240104 16:15:30.085"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:29.646" endtime="20240104 16:15:30.090"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${PAYMENT_CHECK_OPTION}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:30.090" endtime="20240104 16:15:30.521"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:30.521" level="INFO">Clicking element 'xpath://a[contains(.,'Pay by check (order processing will be longer)')]'.</msg>
+<status status="PASS" starttime="20240104 16:15:30.521" endtime="20240104 16:15:30.996"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:30.090" endtime="20240104 16:15:30.997"/>
+</kw>
+<kw name="Wait And Click Element" library="MyKeywords">
+<arg>${CONFIRM_ORDER_BTN}</arg>
+<doc>wait for elements to be enabled before clicking</doc>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240104 16:15:31.000" endtime="20240104 16:15:31.073"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${selector}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 16:15:31.074" level="INFO">Clicking element 'xpath://span[.='I confirm my order']'.</msg>
+<status status="PASS" starttime="20240104 16:15:31.074" endtime="20240104 16:15:37.080"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:30.998" endtime="20240104 16:15:37.080"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Your order on My Shop is complete.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240104 16:15:37.167" level="INFO">Current page contains text 'Your order on My Shop is complete.'.</msg>
+<status status="PASS" starttime="20240104 16:15:37.080" endtime="20240104 16:15:37.167"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:13.789" endtime="20240104 16:15:37.167"/>
+</kw>
+<status status="PASS" starttime="20240104 16:15:13.789" endtime="20240104 16:15:37.167"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20240104 16:15:37.175" endtime="20240104 16:15:40.009"/>
+</kw>
+<doc>Add to Cart Functionality</doc>
+<status status="PASS" starttime="20240104 16:14:53.578" endtime="20240104 16:15:40.009"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">king</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Google Search">Google Search</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="User Add To Cart">User Add To Cart</stat>
 </suite>
 </statistics>
 <errors>
